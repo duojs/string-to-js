@@ -9,7 +9,6 @@
     "url": "git://github.com/matthewmueller/duo-string-to-js.git"
   },
   "dependencies": {
-    "duo": "^0.3.4",
     "string-to-js": "0.0.1"
   },
   "devDependencies": {
