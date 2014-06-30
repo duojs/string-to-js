@@ -22,6 +22,13 @@ duo.run(fn);
 
 Initialize `string-to-js`. Returns `function(file, duo) { ... }`.
 
+## Test
+
+```
+npm install
+make test
+```
+
 ## License 
 
 (The MIT License)
