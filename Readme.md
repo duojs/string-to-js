@@ -1,7 +1,7 @@
 
 # duo-string-to-js
 
-  Duo plugin for converting CSS, JSON, and HTML to JS
+  Duo plugin for converting CSS, JSON, and HTML to JS. Core plugin included within Duo.
 
 ## Installation
 
@@ -10,10 +10,17 @@
 ## Example
 
 ```js
-
+var stoj = require('duo-string-to-js');
+var duo = Duo(__dirname).entry('index.js');
+duo.use(stoj());
+duo.run(fn);
 ```
 
 ## API
+
+### stoj()
+
+Initialize `string-to-js`. Returns `function(file, duo) { ... }`.
 
 ## License 
 
