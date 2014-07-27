@@ -24,7 +24,7 @@ var rtype = /^(html|json|css)$/;
  */
 
 function plugin() {
-  return function (file, duo) {
+  return function stoj(file, duo) {
     if ('js' != duo.type) return;
     if (!rtype.test(file.type)) return;
     file.src = strtojs(file.src);
