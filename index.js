@@ -27,7 +27,9 @@ function plugin() {
   return function stoj(file, duo) {
     if ('js' != duo.type) return;
     if (!rtype.test(file.type)) return;
-    file.src = strtojs(file.src);
+    file.src = 'json' == file.type
+      ? 'module.exports = ' + file.src + ';'
+      : strtojs(file.src);
     file.type = 'js';
   }
 }
