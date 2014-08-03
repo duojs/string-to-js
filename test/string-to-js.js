@@ -13,13 +13,21 @@ var vm = require('vm');
  */
 
 describe('duo-string-to-js', function() {
-  
+
   it('should support html', function *() {
     var duo = build('html');
     duo.use(str2js());
     var js = yield duo.run();
     var ctx = evaluate(js).main;
     assert('<h1>hi world!</h1>\n' == ctx);
+  });
+
+  it('should support json', function *() {
+    var duo = build('json');
+    duo.use(str2js());
+    var js = yield duo.run();
+    var ctx = evaluate(js).main;
+    assert.deepEqual(ctx, { key: 'value' });
   });
 })
 
