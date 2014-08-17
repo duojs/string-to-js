@@ -1,4 +1,11 @@
 
+0.1.0 / 2014-08-16
+==================
+
+ * let js files pass through
+ * fix shader test
+ * support tests on node 0.10.x
+
 0.0.5 / 2014-08-16
 ==================
 
