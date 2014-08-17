@@ -11,12 +11,6 @@ var strtojs = require('string-to-js');
 module.exports = plugin;
 
 /**
- * Regexp
- */
-
-var rtype = /^(html|json|css)$/;
-
-/**
  * Initialize `plugin`
  *
  * @param {Object} file
@@ -26,7 +20,6 @@ var rtype = /^(html|json|css)$/;
 function plugin() {
   return function stoj(file, duo) {
     if ('js' != duo.type) return;
-    if (!rtype.test(file.type)) return;
     file.src = 'json' == file.type
       ? 'module.exports = ' + file.src + ';'
       : strtojs(file.src);

@@ -13,7 +13,6 @@ var vm = require('vm');
  */
 
 describe('duo-string-to-js', function() {
-
   it('should support html', function *() {
     var duo = build('html');
     duo.use(str2js());
@@ -28,6 +27,14 @@ describe('duo-string-to-js', function() {
     var js = yield duo.run();
     var ctx = evaluate(js).main;
     assert.deepEqual(ctx, { key: 'value' });
+  });
+
+  it('should support anything', function *() {
+    var duo = build('shader');
+    duo.use(str2js());
+    var js = yield duo.run();
+    var ctx = evaluate(js).main;
+    assert('void main(void) {}\n' == ctx);
   });
 })
 
