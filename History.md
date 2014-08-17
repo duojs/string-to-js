@@ -1,4 +1,9 @@
 
+0.0.5 / 2014-08-16
+==================
+
+ * add support for requiring arbitrary strings
+
 0.0.4 / 2014-08-03
 ==================
 
