@@ -34,8 +34,17 @@ describe('duo-string-to-js', function() {
     duo.use(str2js());
     var js = yield duo.run();
     var ctx = evaluate(js).main;
-    assert('void main(void) {}\n' == ctx);
+    assert('void main(void) {}' == ctx);
   });
+
+  it('should let js pass through', function *() {
+    var duo = build('js');
+    duo.use(str2js());
+    var js = yield duo.run();
+    var ctx = evaluate(js).main;
+    assert('js' == ctx);
+
+  })
 })
 
 /**

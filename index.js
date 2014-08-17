@@ -14,12 +14,14 @@ module.exports = plugin;
  * Initialize `plugin`
  *
  * @param {Object} file
- * @param {Object} duo
+ * @param {Object} entry
  */
 
 function plugin() {
-  return function stoj(file, duo) {
-    if ('js' != duo.type) return;
+  return function stoj(file, entry) {
+    if ('js' != entry.type) return;
+    if ('js' == file.type) return;
+
     file.src = 'json' == file.type
       ? 'module.exports = ' + file.src + ';'
       : strtojs(file.src);

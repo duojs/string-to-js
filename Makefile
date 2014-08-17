@@ -1,7 +1,5 @@
 
 test:
-	@./node_modules/.bin/mocha \
-		--harmony-generators \
-		--reporter spec
+	@./node_modules/.bin/mocha
 
 .PHONY: test
