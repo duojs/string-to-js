@@ -1,6 +1,6 @@
 # duo-string-to-js
 
-![Travis Build Status](https://img.shields.io/travis/duojs/string-to-js.svg)
+[![Travis Build Status](https://img.shields.io/travis/duojs/string-to-js.svg)](https://travis-ci.org/duojs/string-to-js)
 
 >  Duo plugin for converting CSS, JSON, and HTML to JS.
 

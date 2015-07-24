@@ -2,20 +2,20 @@
   "name": "duo-string-to-js",
   "version": "0.1.1",
   "description": "Duo plugin for converting CSS, JSON, and HTML to JS",
-  "keywords": [],
+  "keywords": [ "duo", "plugin", "string" ],
+  "license": "MIT",
   "author": "Matthew Mueller <mattmuelle@gmail.com>",
   "repository": "duojs/string-to-js",
   "dependencies": {
     "string-to-js": "0.0.1"
   },
   "devDependencies": {
-    "co-mocha": "^1.1.2",
+    "bluebird": "^2.9.34",
+    "co-mocha": "~1.0.3",
     "duo": "^0.14.1",
     "eslint": "^0.24.1",
     "eslint-config-duo": "0.0.4",
     "gnode": "^0.1.1",
     "mocha": "^2.2.5"
-  },
-  "main": "index.js",
-  "license": "MIT"
+  }
 }
