@@ -1,4 +1,13 @@
 
+0.1.1 / 2015-07-24
+==================
+
+  * package: Add "license" field
+  * package: Fix "repository" and "main" fields
+  * Makefile: Support older nodes and iojs
+  * test: Fix `duo.run()` usage
+  * package: Pin development dependencies
+
 0.1.0 / 2014-08-16
 ==================
 
