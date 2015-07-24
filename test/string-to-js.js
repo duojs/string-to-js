@@ -16,7 +16,7 @@ describe('duo-string-to-js', function() {
   it('should support html', function *() {
     var duo = build('html');
     duo.use(str2js());
-    var js = yield duo.run();
+    var js = (yield duo.run()).code;
     var ctx = evaluate(js).main;
     assert('<h1>hi world!</h1>\n' == ctx);
   });
@@ -24,7 +24,7 @@ describe('duo-string-to-js', function() {
   it('should support json', function *() {
     var duo = build('json');
     duo.use(str2js());
-    var js = yield duo.run();
+    var js = (yield duo.run()).code;
     var ctx = evaluate(js).main;
     assert.deepEqual(ctx, { key: 'value' });
   });
@@ -32,7 +32,7 @@ describe('duo-string-to-js', function() {
   it('should support anything', function *() {
     var duo = build('shader');
     duo.use(str2js());
-    var js = yield duo.run();
+    var js = (yield duo.run()).code;
     var ctx = evaluate(js).main;
     assert('void main(void) {}' == ctx);
   });
@@ -40,7 +40,7 @@ describe('duo-string-to-js', function() {
   it('should let js pass through', function *() {
     var duo = build('js');
     duo.use(str2js());
-    var js = yield duo.run();
+    var js = (yield duo.run()).code;
     var ctx = evaluate(js).main;
     assert('js' == ctx);
 
