@@ -19,12 +19,12 @@ module.exports = plugin;
 
 function plugin() {
   return function stoj(file, entry) {
-    if ('js' != entry.type) return;
-    if ('js' == file.type) return;
+    if (entry.type !== 'js') return;
+    if (file.type === 'js') return;
 
-    file.src = 'json' == file.type
+    file.src = file.type === 'json'
       ? 'module.exports = ' + file.src + ';'
       : strtojs(file.src);
     file.type = 'js';
-  }
+  };
 }

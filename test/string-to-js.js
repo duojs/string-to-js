@@ -12,16 +12,16 @@ var vm = require('vm');
  * Tests
  */
 
-describe('duo-string-to-js', function() {
-  it('should support html', function *() {
+describe('duo-string-to-js', function () {
+  it('should support html', function* () {
     var duo = build('html');
     duo.use(str2js());
     var js = (yield duo.run()).code;
     var ctx = evaluate(js).main;
-    assert('<h1>hi world!</h1>\n' == ctx);
+    assert.equal(ctx, '<h1>hi world!</h1>\n');
   });
 
-  it('should support json', function *() {
+  it('should support json', function* () {
     var duo = build('json');
     duo.use(str2js());
     var js = (yield duo.run()).code;
@@ -29,23 +29,22 @@ describe('duo-string-to-js', function() {
     assert.deepEqual(ctx, { key: 'value' });
   });
 
-  it('should support anything', function *() {
+  it('should support anything', function* () {
     var duo = build('shader');
     duo.use(str2js());
     var js = (yield duo.run()).code;
     var ctx = evaluate(js).main;
-    assert('void main(void) {}' == ctx);
+    assert.equal(ctx, 'void main(void) {}');
   });
 
-  it('should let js pass through', function *() {
+  it('should let js pass through', function* () {
     var duo = build('js');
     duo.use(str2js());
     var js = (yield duo.run()).code;
     var ctx = evaluate(js).main;
-    assert('js' == ctx);
-
-  })
-})
+    assert.equal(ctx, 'js');
+  });
+});
 
 /**
  * Build js `fixture` and return `str`.
@@ -54,7 +53,7 @@ describe('duo-string-to-js', function() {
  * @return {String}
  */
 
-function build(fixture, file){
+function build(fixture, file) {
   var root = path(fixture);
   var duo = Duo(root).entry(file || 'index.js');
   return duo;
@@ -64,7 +63,7 @@ function build(fixture, file){
  * Path to `fixture`
  */
 
-function path(fixture){
+function path(fixture) {
   return join(__dirname, 'fixtures', fixture);
 }
 
@@ -74,8 +73,8 @@ function path(fixture){
  * @return {Object}
  */
 
-function evaluate(js, ctx){
-  var ctx = { window: {}, document: {} };
+function evaluate(js, ctx) {
+  if (!ctx) ctx = { window: {}, document: {} };
   vm.runInNewContext('main =' + js + '(1)', ctx, 'main.vm');
   vm.runInNewContext('require =' + js + '', ctx, 'require.vm');
   return ctx;
