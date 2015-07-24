@@ -1,8 +1,12 @@
 {
   "name": "duo-string-to-js",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Duo plugin for converting CSS, JSON, and HTML to JS",
-  "keywords": [ "duo", "plugin", "string" ],
+  "keywords": [
+    "duo",
+    "plugin",
+    "string"
+  ],
   "license": "MIT",
   "author": "Matthew Mueller <mattmuelle@gmail.com>",
   "repository": "duojs/string-to-js",
