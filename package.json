@@ -14,5 +14,6 @@
     "gnode": "^0.1.1",
     "mocha": "^2.2.5"
   },
-  "main": "index.js"
+  "main": "index.js",
+  "license": "MIT"
 }
