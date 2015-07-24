@@ -12,10 +12,10 @@
     "string-to-js": "0.0.1"
   },
   "devDependencies": {
-    "co-mocha": "0.0.4",
-    "mocha": "*",
-    "duo": "*",
-    "gnode": "0.0.8"
+    "co-mocha": "^1.1.2",
+    "duo": "^0.14.1",
+    "gnode": "^0.1.1",
+    "mocha": "^2.2.5"
   },
   "main": "index"
 }
